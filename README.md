@@ -4,7 +4,7 @@
 This sketch dumps (selected) registers to the serial monitor.
 The GENCTRL registers are also written out.
 It implements the statement in the Atmel datasheet: 
- The GCLK peripheral's GENCTRL, GENDIV and CLKCTRL registers are indirectly addressed. 
+      The GCLK peripheral's GENCTRL, GENDIV and CLKCTRL registers are indirectly addressed. 
    To read back from these generic clock registers,  
    it's first necessary to do an 8-bit write to the register's ID bitfield, to identify the GCLK before performing a read.
   or 
