@@ -45,16 +45,123 @@ String ID_selection(uint8_t grp,uint32_t id) {
       }
     case 2:
       switch(id){
-        case 0x00: return" XOSC XOSC oscillator output"; break; 
-        case 0x01: return" GCLKIN Generator input pad"; break; 
-        case 0x02: return" GCLKGEN1 Generic clock generator 1 output"; break; 
-        case 0x03: return" OSCULP32K OSCULP32K oscillator output"; break; 
-        case 0x04: return" OSC32K OSC32K oscillator output"; break; 
-        case 0x05: return" XOSC32K XOSC32K oscillator output"; break; 
-        case 0x06: return" OSC8M OSC8M oscillator output"; break; 
-        case 0x07: return" DFLL48M DFLL48M output"; break; 
-        case 0x08: return" FDPLL96M FDPLL96M output"; break;  
+        case 0x00: return " - XOSC XOSC oscillator output"; break; 
+        case 0x01: return " - GCLKIN Generator input pad"; break; 
+        case 0x02: return " - GCLKGEN1 Generic clock generator 1 output"; break; 
+        case 0x03: return " - OSCULP32K OSCULP32K oscillator output"; break; 
+        case 0x04: return " - OSC32K OSC32K oscillator output"; break; 
+        case 0x05: return " - XOSC32K XOSC32K oscillator output"; break; 
+        case 0x06: return " - OSC8M OSC8M oscillator output"; break; 
+        case 0x07: return " - DFLL48M DFLL48M output"; break; 
+        case 0x08: return " - FDPLL96M FDPLL96M output"; break;  
       }
+    case 3:
+      switch(id){
+        case 0x0: return " - 1.0V voltage reference"; break;
+        case 0x1: return " - 1/1.48 VDDANA"; break;
+        case 0x2: return " - 1/2 VDDANA (only for VDDANA > 2.0V)"; break;
+        case 0x3: return " - External reference VREFA"; break;
+        case 0x4: return " - External reference VREFB"; break;
+      }
+    case 4:
+      switch(id) {
+        case 0x0: return " -1 sample"; break;
+        case 0x1: return " -2 samples"; break;
+        case 0x2: return " -4 samples"; break;
+        case 0x3: return " -8 samples"; break;
+        case 0x4: return " -16 samples"; break;
+        case 0x5: return " -32 samples"; break;
+        case 0x6: return " -64 samples"; break;
+        case 0x7: return " -128 samples"; break;
+        case 0x8: return " -256 samples"; break;
+        case 0x9: return " -512 samples"; break;
+        case 0xA: return " -1024 samples"; break; 
+      }
+    case 5:
+      switch(id) {
+        case 0x0: return " - DIV4 Peripheral clock divided by 4"; break;
+        case 0x1: return " - DIV8 Peripheral clock divided by 8"; break;
+        case 0x2: return " - DIV16 Peripheral clock divided by 16"; break;
+        case 0x3: return " - DIV32 Peripheral clock divided by 32"; break;
+        case 0x4: return " - DIV64 Peripheral clock divided by 64"; break;
+        case 0x5: return " - DIV128 Peripheral clock divided by 128"; break;
+        case 0x6: return " - DIV256 Peripheral clock divided by 256"; break;
+        case 0x7: return " - DIV512 Peripheral clock divided by 512"; break;
+      }
+    case 6:
+      switch(id) {
+        case 0x0: return " - 12BIT 12-bit result"; break;
+        case 0x1: return " - 16BIT For averaging mode output"; break;
+        case 0x2: return " - 10BIT 10-bit result"; break;
+        case 0x3: return " - 8BIT 8-bit result"; break;
+      }
+    case 7:
+      switch(id) {
+        case 0x0: return(" - DISABLE No window mode (default)"); break;
+        case 0x1: return(" - MODE1 Mode 1: RESULT > WINLT"); break;
+        case 0x2: return(" - MODE2 Mode 2: RESULT < WINUT"); break;
+        case 0x3: return(" - MODE3 Mode 3: WINLT < RESULT < WINUT"); break;
+        case 0x4: return(" - MODE4 Mode 4: !(WINLT < RESULT < WINUT)"); break;
+      }
+    case 8:
+      switch(id) {
+        case 0x0: return " - Gain factor 1x"; break;
+        case 0x1: return " - Gain factor 2x"; break;
+        case 0x2: return " - Gain factor 4x"; break;
+        case 0x3: return " - Gain factor 8x"; break;
+        case 0x4: return " - Gain factor 16x"; break;
+        case 0x5-0xE: return " -Gain factor Reserved"; break;
+        case 0xF: return " - Gain factor DIV2 1/2x"; break;
+      }
+    case 9:
+      switch(id) {
+        case 0x00: return " - PIN0 ADC AIN0 pin"; break;
+        case 0x01: return " - PIN1 ADC AIN1 pin"; break;
+        case 0x02: return " - PIN2 ADC AIN2 pin"; break;
+        case 0x03: return " - PIN3 ADC AIN3 pin"; break;
+        case 0x04: return " - PIN4 ADC AIN4 pin"; break;
+        case 0x05: return " - PIN5 ADC AIN5 pin"; break;
+        case 0x06: return " - PIN6 ADC AIN6 pin"; break;
+        case 0x07: return " - PIN7 ADC AIN7 pin"; break;
+        case 0x08-0x17: return " - – Reserved"; break;
+        case 0x18: return " - GND Internal ground"; break;
+        case 0x19: return " - IOGND I/O ground"; break;
+        case 0x1A-0x1F: return " - – Reserved"; break;
+      }
+   case 10:
+    switch(id){
+      case 0x00: return " -PIN0 ADC AIN0 pin"; break;
+      case 0x01: return " - PIN1 ADC AIN1 pin"; break;
+      case 0x02: return " -PIN2 ADC AIN2 pin"; break;
+      case 0x03: return " - PIN3 ADC AIN3 pin"; break;
+      case 0x04: return " - PIN4 ADC AIN4 pin"; break;
+      case 0x05: return " - PIN5 ADC AIN5 pin"; break;
+      case 0x06: return " - PIN6 ADC AIN6 pin"; break;
+      case 0x07: return " - PIN7 ADC AIN7 pin"; break;
+      case 0x08: return " - PIN8 ADC AIN8 pin"; break;
+      case 0x09: return " - PIN9 ADC AIN9 pin"; break;
+      case 0x0A: return " - PIN10 ADC AIN10 pin"; break;
+      case 0x0B: return " - PIN11 ADC AIN11 pin"; break;
+      case 0x0C: return " - PIN12 ADC AIN12 pin"; break;
+      case 0x0D: return " - PIN13 ADC AIN13 pin"; break;
+      case 0x0E: return " - PIN14 ADC AIN14 pin"; break;
+      case 0x0F: return " - PIN15 ADC AIN15 pin"; break;
+      case 0x10: return " - PIN16 ADC AIN16 pin"; break;
+      case 0x11: return " - PIN17 ADC AIN17 pin"; break;
+      case 0x12: return " - PIN18 ADC AIN18 pin"; break;
+      case 0x13: return " - PIN19 ADC AIN19 pin"; break;
+      case 0x14-0x17: return " - Reserved"; break;
+      case 0x18: return " - TEMP Temperature reference"; break;
+      case 0x19: return " - BANDGAP Bandgap voltage"; break;
+      case 0x1A: return " - SCALEDCOREVCC 1/4 scaled core supply"; break;
+      case 0x1B: return " - SCALEDIOVCC 1/4 scaled I/O supply"; break;
+      case 0x1C: return " - DAC DAC output"; break;
+      case 0x1D-0x1F: return " - Reserved"; break;
+    }
+  case 11:
+    switch(id) {
+      
+    }
       break;
   }
   return "";
@@ -78,7 +185,7 @@ void setup() {
   PORT->Group[g_APinDescription[6].ulPort].PMUX[g_APinDescription[6].ulPin >> 1].reg |= PORT_PMUX_PMUXE_H;
   Serial.println("");
 
- for (uint8_t i=0;i<25;i++) { 
+ for (uint8_t i=0;i<36;i++) { 
     uint8_t *clkctrl;
     clkctrl = (uint8_t *) (0x40000C02UL);
     *clkctrl=i;
@@ -338,7 +445,7 @@ Serial.println("***********************DPLLSTATUS******************************"
               // Serial.print(SYSCTRL->DPLLSTATUS.bit.); Serial.println("            :4 bit: 4.. 7 Reserved");
 Serial.println("***********************DPLLSTATUS******************************");
 
-for (uint8_t y=1;y<3;y++) { 
+for (uint8_t y=0;y<3;y++) { 
     Serial.print("***********************PORT "); Serial.print(y); Serial.println("**********************************");
               Serial.print(PORT->Group[y].DIR.bit.DIR,BIN); Serial.println("            :bit  0..31  Port Data Direction");
               Serial.print(PORT->Group[y].OUT.bit.OUT,BIN); Serial.println("            :bit  0..31  Port Data Output Value");
@@ -350,6 +457,11 @@ for (uint8_t y=1;y<3;y++) {
               }
               for (uint8_t i=0;i<32;i++) {
                 Serial.print("********Pin:");Serial.print(i); Serial.print(" on port: "); Serial.print(y); Serial.println("************"); Serial.print("    ");
+                uint32_t sel=((uint32_t) 1 << i);
+                Serial.print((PORT->Group[y].DIR.bit.DIR&sel)>>i); Serial.println("            :bit  0..31  Port Data Direction");
+                Serial.print((PORT->Group[y].OUT.bit.OUT&sel)>>i); Serial.println("            :bit  0..31  Port Data Output Value");
+                Serial.print((PORT->Group[y].IN.bit.IN&sel)>>i); Serial.println("            :bit  0..31  Port Data Input Value");
+                Serial.print((PORT->Group[y].CTRL.bit.SAMPLING&sel)>>i); Serial.println("            :bit:  0..31  Input Sampling Mode");
                 Serial.print(PORT->Group[y].PINCFG[i].bit.PMUXEN); Serial.println("            :1 bit 0 Peripheral Multiplexer Enable "); Serial.print("    ");
                  Serial.print(PORT->Group[y].PINCFG[i].bit.INEN); Serial.println("            :1 bit 1 Input Enable "); Serial.print("    ");
                 Serial.print(PORT->Group[y].PINCFG[i].bit.PULLEN); Serial.println("            :1 bit 2 Pull Enable "); Serial.print("    ");
@@ -361,14 +473,120 @@ for (uint8_t y=1;y<3;y++) {
   Serial.print("***********************PORT "); Serial.print(y); Serial.println("**********************************");
 }
 
+Serial.println("***********************SERCOM3 SPI CTRLA******************************");
+               Serial.print(SERCOM3->SPI.CTRLA.bit.SWRST); Serial.println(":1 bit: 0 Software Reset");
+               Serial.print(SERCOM3->SPI.CTRLA.bit.ENABLE); Serial.println(":1 bit: 1 Enable");
+               Serial.print(SERCOM3->SPI.CTRLA.bit.MODE); Serial.println(":3 bit: 2.. 4 Operating Mode");
+              // Serial.print(SERCOM3->SPI.CTRLA.bit.); Serial.println(":2 bit: 5.. 6 Reserved");
+               Serial.print(SERCOM3->SPI.CTRLA.bit.RUNSTDBY); Serial.println(":1 bit: 7 Run during Standby");
+               Serial.print(SERCOM3->SPI.CTRLA.bit.IBON); Serial.println(":1 bit: 8 Immediate Buffer Overflow Notification");
+              // Serial.print(SERCOM3->SPI.CTRLA.bit.); Serial.println(":7 bit: 9..15 Reserved");
+               Serial.print(SERCOM3->SPI.CTRLA.bit.DOPO); Serial.println(":2 bit: 16..17 Data Out Pinout");
+              // Serial.print(SERCOM3->SPI.CTRLA.bit.); Serial.println(":2 bit: 18..19 Reserved");
+               Serial.print(SERCOM3->SPI.CTRLA.bit.DIPO); Serial.println(":2 bit: 20..21 Data In Pinout");
+              // Serial.print(SERCOM3->SPI.CTRLA.bit.); Serial.println(":2 bit: 22..23 Reserved");
+               Serial.print(SERCOM3->SPI.CTRLA.bit.FORM); Serial.println(":4 bit: 24..27 Frame Format");
+               Serial.print(SERCOM3->SPI.CTRLA.bit.CPHA); Serial.println(":1 bit: 28 Clock Phase");
+               Serial.print(SERCOM3->SPI.CTRLA.bit.CPOL); Serial.println(":1 bit: 29 Clock Polarity");
+               Serial.print(SERCOM3->SPI.CTRLA.bit.DORD); Serial.println(":1 bit: 30 Data Order");
+             //  Serial.print(SERCOM3->SPI.CTRLA.bit.); Serial.println(":1 bit: 31 Reserved");
+Serial.println("***********************SERCOM3 SPI CTRLA******************************");
+Serial.println("***********************SPI CTRLB******************************");
+             Serial.print(SERCOM3->SPI.CTRLB.bit.CHSIZE); Serial.println(":3  bit: 0.. 2 Character Size");
+            // Serial.print(SERCOM3->SPI.CTRLB.bit.); Serial.println(":3  bit: 3.. 5 Reserved");
+             Serial.print(SERCOM3->SPI.CTRLB.bit.PLOADEN); Serial.println(":1  bit: 6 Data Preload Enable");
+            // Serial.print(SERCOM3->SPI.CTRLB.bit.); Serial.println(":2  bit: 7.. 8 Reserved");
+             Serial.print(SERCOM3->SPI.CTRLB.bit.SSDE); Serial.println(":1  bit: 9 Slave Select Low Detect Enable");
+            // Serial.print(SERCOM3->SPI.CTRLB.bit.); Serial.println(":3  bit: 10..12 Reserved");
+             Serial.print(SERCOM3->SPI.CTRLB.bit.MSSEN); Serial.println(":1  bit: 13 Master Slave Select Enable");
+             Serial.print(SERCOM3->SPI.CTRLB.bit.AMODE); Serial.println(":2  bit: 14..15 Address Mode");
+            // Serial.print(SERCOM3->SPI.CTRLB.bit.); Serial.println(":1  bit: 16 Reserved");
+             Serial.print(SERCOM3->SPI.CTRLB.bit.RXEN); Serial.println(":1  bit: 17 Receiver Enable");
+            // Serial.print(SERCOM3->SPI.CTRLB.bit.); Serial.println(":14  bit: 18..31 Reserved");
+Serial.println("***********************SPI CTRLB******************************");
 
-Serial.println("SPI started");
-/*
-PORT->Group[g_APinDescription[6].ulPort].PINCFG[g_APinDescription[6].ulPin].bit.PMUXEN = 1;
+Serial.println("***********************ADC CTRLA******************************");
+             Serial.print(ADC->CTRLA.bit.SWRST); Serial.println(":1 bit: 0 Software Reset");
+             Serial.print(ADC->CTRLA.bit.ENABLE); Serial.println(":1 bit: 1 Enable");
+             Serial.print(ADC->CTRLA.bit.RUNSTDBY); Serial.println(":1 bit: 2 Run in Standby");
+            // Serial.print(ADC->CTRLA.bit.) Serial.println(":5 bit: 3.. 7 Reserved");
+Serial.println("***********************ADC CTRLA******************************");
+Serial.println("***********************ADC REFCTRL******************************");
+             Serial.print(ADC->REFCTRL.bit.REFSEL); Serial.println(ID_selection(3,(uint32_t) ADC->REFCTRL.bit.REFSEL));//Serial.println(":4 bit: 0.. 3 Reference Selection");
+             //Serial.print(ADC->REFCTRL.bit.); Serial.println(":3 bit: 4.. 6 Reserved");
+             Serial.print(ADC->REFCTRL.bit.REFCOMP); Serial.println(":1 bit: 7 Reference Buffer Offset Compensation Enable");
+Serial.println("***********************ADC REFCTRL******************************");
+Serial.println("***********************ADC AVGCTRL******************************");
+             Serial.print(ADC->AVGCTRL.bit.SAMPLENUM); Serial.println(ID_selection(4,(uint32_t) ADC->AVGCTRL.bit.SAMPLENUM));//Serial.println(":4 bit: 0.. 3 Number of Samples to be Collected");
+             Serial.print(ADC->AVGCTRL.bit.ADJRES); Serial.println(":3 bit: 4.. 6 Adjusting Result / Division Coefficient");
+             //Serial.print(ADC->AVGCTRL.bit.); Serial.println(":1 bit: 7 Reserved");
+Serial.println("***********************ADC AVGCTRL******************************");
+Serial.println("***********************ADC SAMPCTRL******************************");
+             Serial.print(ADC->SAMPCTRL.bit.SAMPLEN); Serial.println(":6 bit: 0.. 5 Sampling Time Length");
+             //Serial.print(ADC->SAMPCTRL.bit.); Serial.println(":2 bit: 6.. 7 Reserved");
+Serial.println("***********************ADC SAMPCTRL******************************");
+Serial.println("***********************ADC CTRLB******************************");
+             Serial.print(ADC->CTRLB.bit.DIFFMODE); Serial.println(":1 bit: 0 Differential Mode");
+             Serial.print(ADC->CTRLB.bit.LEFTADJ); Serial.println(":1 bit: 1 Left-Adjusted Result");
+             Serial.print(ADC->CTRLB.bit.FREERUN); Serial.println(":1 bit: 2 Free Running Mode");
+             Serial.print(ADC->CTRLB.bit.CORREN); Serial.println(":1 bit: 3 Digital Correction Logic Enabled");
+             Serial.print(ADC->CTRLB.bit.RESSEL); Serial.println(ID_selection(6,(uint32_t) ADC->CTRLB.bit.RESSEL));//Serial.println(":2 bit: 4.. 5 Conversion Result Resolution");
+             //Serial.print(ADC->CTRLB.bit.); Serial.println(":2 bit: 6.. 7 Reserved");
+             Serial.print(ADC->CTRLB.bit.PRESCALER); Serial.println(ID_selection(5,(uint32_t) ADC->CTRLB.bit.PRESCALER));// Serial.println(":3 bit: 8..10 Prescaler Configuration");
+             //Serial.print(ADC->CTRLB.bit.); Serial.println(":5 bit: 11..15 Reserved");
+Serial.println("***********************ADC CTRLB******************************");
+Serial.println("***********************ADC WINCTRL******************************");
+             Serial.print(ADC->WINCTRL.bit.WINMODE); Serial.println(ID_selection(7,(uint32_t) ADC->WINCTRL.bit.WINMODE));// Serial.println(":3  bit: 0.. 2 Window Monitor Mode);
+             //Serial.print(ADC->WINCTRL.bit.); Serial.println(":5  bit: 3.. 7 Reserved);
+Serial.println("***********************ADC WINCTRL******************************");
+Serial.println("***********************ADC SWTRIG******************************");
+             Serial.print(ADC->SWTRIG.bit.FLUSH); Serial.println(":1  bit# 0 ADC Conversion Flush");
+             Serial.print(ADC->SWTRIG.bit.START); Serial.println(":1  bit# 1 ADC Start Conversion");
+             //Serial.print(ADC->SWTRIG.bit.); Serial.println(":6  bit# 2.. 7 Reserved");
+Serial.println("***********************ADC SWTRIG******************************");
+Serial.println("***********************ADC INPUTCTRL******************************");
+               Serial.print(ADC->INPUTCTRL.bit.MUXPOS);Serial.println(ID_selection(10,(uint32_t) ADC->INPUTCTRL.bit.MUXPOS));// Serial.println(":5  bit: 0.. 4 Positive Mux Input Selection");
+               //Serial.print(ADC->INPUTCTRL.bit.); Serial.println(":3  bit: 5.. 7 Reserved");
+               Serial.print(ADC->INPUTCTRL.bit.MUXNEG);Serial.println(ID_selection(9,(uint32_t) ADC->INPUTCTRL.bit.MUXNEG));// Serial.println(":5  bit: 8..12 Negative Mux Input Selection");
+               //Serial.print(ADC->INPUTCTRL.bit.); Serial.println(":3  bit: 13..15 Reserved");
+               Serial.print(ADC->INPUTCTRL.bit.INPUTSCAN); Serial.println(":4  bit: 16..19 Number of Input Channels Included in Scan");
+               Serial.print(ADC->INPUTCTRL.bit.INPUTOFFSET); Serial.println(":4  bit: 20..23 Positive Mux Setting Offset");
+               Serial.print(ADC->INPUTCTRL.bit.GAIN);Serial.println(ID_selection(8,(uint32_t) ADC->INPUTCTRL.bit.GAIN));// Serial.println(":4  bit: 24..27 Gain Factor Selection");
+               //Serial.print(ADC->INPUTCTRL.bit.); Serial.println(":4  bit: 28..31 Reserved");
+Serial.println("***********************ADC INPUTCTRL******************************");
+Serial.println("***********************ADC EVCTRL******************************");
+               Serial.print(ADC->EVCTRL.bit.STARTEI); Serial.println(":1 bit: 0 Start Conversion Event In");
+               Serial.print(ADC->EVCTRL.bit.SYNCEI); Serial.println(":1 bit: 1 Synchronization Event In");
+               //Serial.print(ADC->EVCTRL.bit.); Serial.println(":2 bit: 2.. 3 Reserved");
+               Serial.print(ADC->EVCTRL.bit.RESRDYEO); Serial.println(":1 bit: 4 Result Ready Event Out");
+               Serial.print(ADC->EVCTRL.bit.WINMONEO); Serial.println(":1 bit: 5 Window Monitor Event Out");
+               //Serial.print(ADC->EVCTRL.bit.); Serial.println(":2 bit: 6.. 7 Reserved");
+Serial.println("***********************ADC EVCTRL******************************");
+Serial.println("***********************ADC WINLT******************************");
+              Serial.print(ADC->WINLT.bit.WINLT); Serial.println(":16 bit:  0..15  Window Lower Threshold");
+Serial.println("***********************ADC WINLT******************************");
+Serial.println("***********************ADC WINUT******************************");
+              Serial.print(ADC->WINUT.bit.WINUT); Serial.println(":16 bit:  0..15  Window Upper Threshold");
+Serial.println("***********************ADC WINUT******************************");
+Serial.println("***********************ADC GAINCORR******************************");
+              Serial.print(ADC->GAINCORR.bit.GAINCORR); Serial.println(":12 bit:  0..11  Gain Correction Value");
+              //Serial.print(ADC->GAINCORR.bit.); Serial.prinln(":4 bit: 12..15  Reserved");
+Serial.println("***********************ADC GAINCORR******************************");
+Serial.println("***********************ADC OFFSETCORR******************************");
+              Serial.print(ADC->OFFSETCORR.bit.OFFSETCORR); Serial.println(":12 bit:  0..11  Offset Correction Value");
+              //Serial.print(ADC->OFFSETCORR.bit.); Serial.println(":4 bit: 12..15  Reserved");
+Serial.println("***********************ADC OFFSETCORR******************************");
+Serial.println("***********************ADC CALIB******************************");
+              Serial.print(ADC->CALIB.bit.LINEARITY_CAL); Serial.println(":8: bit:  0.. 7  Linearity Calibration Value");
+              Serial.print(ADC->CALIB.bit.BIAS_CAL); Serial.println(":3 bit:  8..10  Bias Calibration Value");
+              //Serial.print(ADC->CALIB.bit.; Serial.println(":5 bit: 11..15  Reserved");
+Serial.println("***********************ADC CALIB******************************");
+Serial.println("***********************ADC DBGCTRL******************************");
+              Serial.print(ADC->DBGCTRL.bit.DBGRUN); Serial.println(":1 bit: 0  Debug Run");
+Serial.println("***********************ADC DBGCTRL******************************");
 
-  // Switch the port multiplexer to peripheral H (GCLK_IO[4])
-  PORT->Group[g_APinDescription[6].ulPort].PMUX[g_APinDescription[6].ulPin >> 1].reg |= PORT_PMUX_PMUXE_H;
- */
+
+Serial.println("started");
 }
 
 
